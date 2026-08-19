@@ -30,7 +30,7 @@ Source  : Article 77 & 79 (Right to lodge a complaint), GDPR — EUR-Lex
 
 Legal information is notoriously difficult to navigate. EU regulations run into hundreds of pages of dense legal language. This system makes EU law **accessible to anyone** — no legal background required.
 
-This project is a full end-to-end implementation of the same core architecture, built from scratch.
+
 
 ---
 
