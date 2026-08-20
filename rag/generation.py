@@ -1,6 +1,7 @@
 import requests
 from rag.retrieval import rechercher_passages
 
+
 def repondre(question):
     # Étape 1 : récupérer les passages pertinents depuis ChromaDB
     passages_trouves, distances, sources = rechercher_passages(question, k=3)

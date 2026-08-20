@@ -9,6 +9,7 @@ if not os.path.exists("./legal_rag_db"):
     construire_base()
 
 # Fonction qui connecte Gradio à notre pipeline
+
 def chatbot_legal(question):
     if not question.strip():
         return "Please enter a question.", "", ""
@@ -17,6 +18,7 @@ def chatbot_legal(question):
         return res["reponse"], res["source"], res["contexte"]
     except Exception as e:
         return f"Error: {str(e)}", "", ""
+
 
 # Interface Gradio
 interface = gr.Interface(
@@ -36,3 +38,4 @@ interface = gr.Interface(
 
 if __name__ == "__main__":
     interface.launch()
+    

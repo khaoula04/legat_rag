@@ -21,7 +21,7 @@ def rechercher_passages(question, k=3):
 
     passages_trouves = resultats["documents"][0]
     distances = resultats["distances"][0]
-    indices = [int(id) for id in resultats["ids"][0]]
+    #indices = [int(id) for id in resultats["ids"][0]]
 
     # Récupérer les sources depuis les métadonnées
     sources = resultats["metadatas"][0] if resultats["metadatas"][0] else []

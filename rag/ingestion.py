@@ -15,6 +15,7 @@ DOCUMENTS = {
     "Working Time Directive": "CELEX_32003L0088_EN_TXT.pdf"
 }
 
+
 def extraire_articles_pdf(fichier, nom, max_articles=30):
     doc = fitz.open(fichier)
     texte_complet = ""
@@ -78,7 +79,7 @@ def construire_base():
     client = chromadb.PersistentClient(path=DB_PATH)
     try:
         client.delete_collection("legal_passages")
-    except:
+    except Exception:
         pass
 
     collection = client.create_collection(
@@ -93,7 +94,7 @@ def construire_base():
             embeddings=passage_embeddings[i:i+batch_size].tolist(),
             ids=[str(j) for j in range(i, i+len(passages[i:i+batch_size]))],
             metadatas=[{"source": passages_sources[i+k]} for k in range(len(passages[i:i+batch_size]))]  # ← NOUVEAU
-)
+        )
         print(f"  {min(i+batch_size, len(passages))}/{len(passages)} indexés...")
 
     print(f"\n ChromaDB prêt — {collection.count()} passages")
