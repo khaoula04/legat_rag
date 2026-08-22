@@ -26,6 +26,7 @@ def extraire_articles_pdf(fichier, nom, max_articles=30):
     articles_locaux = []
     sources_locales = []
 
+    #determination de taille de chunk (chunk par article)
     i = 0
     while i < len(lignes):
         ligne = lignes[i].strip()
